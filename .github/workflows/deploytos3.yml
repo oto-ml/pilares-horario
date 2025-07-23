@@ -1,26 +1,67 @@
-name: Deploy static site to AWS S3
+name: Deploy to S3
 
 on:
   push:
-    branches: [ main ]
+    branches:
+      - main  # Cambia por tu rama principal
+  pull_request:
+    branches:
+      - main
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    
     steps:
-      - uses: actions/checkout@v4
-
-      - name: Set up Node.js (opcional, si usas herramientas JS)
-        uses: actions/setup-node@v4
-        with:
-          node-version: '20'
-
-      - name: Configure AWS credentials
-        uses: aws-actions/configure-aws-credentials@v4
-        with:
-          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          aws-region: us-east-1 # Cambia la región según tu bucket
-
-      - name: Sync files to S3
-        run: aws s3 sync . s3://coyuyapage --exclude ".git/*" --delete
+    - name: Checkout code
+      uses: actions/checkout@v4
+    
+    # No necesitas Node.js para HTML/CSS estático
+    
+    - name: Configure AWS credentials
+      uses: aws-actions/configure-aws-credentials@v4
+      with:
+        aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        aws-region: us-east-1  # Cambia por tu región
+    
+    - name: Sync files to S3
+      run: |
+        aws s3 sync . s3://${{ secrets.S3_BUCKET_NAME }} \
+          --exclude ".git/*" \
+          --exclude ".github/*" \
+          --exclude "*.md" \
+          --exclude "README*" \
+          --delete
+    
+    - name: Set cache headers for static assets
+      run: |
+        # Cache CSS y JS por 1 año
+        aws s3 cp s3://${{ secrets.S3_BUCKET_NAME }} s3://${{ secrets.S3_BUCKET_NAME }} \
+          --recursive \
+          --exclude "*" \
+          --include "*.css" \
+          --include "*.js" \
+          --include "*.png" \
+          --include "*.jpg" \
+          --include "*.jpeg" \
+          --include "*.gif" \
+          --include "*.svg" \
+          --metadata-directive REPLACE \
+          --cache-control "max-age=31536000"
+        
+        # HTML sin cache para actualizaciones inmediatas
+        aws s3 cp s3://${{ secrets.S3_BUCKET_NAME }} s3://${{ secrets.S3_BUCKET_NAME }} \
+          --recursive \
+          --exclude "*" \
+          --include "*.html" \
+          --metadata-directive REPLACE \
+          --cache-control "max-age=0,no-cache,no-store,must-revalidate"
+    
+    # Opcional: Invalidar CloudFront cache si usas CDN
+    - name: Invalidate CloudFront
+      if: github.ref == 'refs/heads/main'
+      run: |
+        aws cloudfront create-invalidation \
+          --distribution-id ${{ secrets.CLOUDFRONT_DISTRIBUTION_ID }} \
+          --paths "/*"
