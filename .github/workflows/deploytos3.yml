@@ -58,10 +58,4 @@ jobs:
           --metadata-directive REPLACE \
           --cache-control "max-age=0,no-cache,no-store,must-revalidate"
     
-    # Opcional: Invalidar CloudFront cache si usas CDN
-    - name: Invalidate CloudFront
-      if: github.ref == 'refs/heads/main'
-      run: |
-        aws cloudfront create-invalidation \
-          --distribution-id ${{ secrets.CLOUDFRONT_DISTRIBUTION_ID }} \
-          --paths "/*"
+    # CloudFront invalidation removido - no es necesario para S3 hosting básico
