@@ -347,6 +347,7 @@
         <div class="banner">
             <input type="file" id="bannerUpload" accept="image/*" style="display: none;">
             <button class="banner-upload" onclick="document.getElementById('bannerUpload').click()">📷 Cambiar Imagen</button>
+            <button class="banner-upload" onclick="resetBannerImage()" style="right: 140px;">🔄 Restablecer</button>
             <div class="banner-overlay">
                 <div class="header">
                     <h1>Pilares Martires del 10 de junio</h1>
@@ -598,24 +599,85 @@
         // Función para cambiar la imagen del banner
         function changeBannerImage() {
             const input = document.getElementById('bannerUpload');
+            const banner = document.querySelector('.banner');
             
-            input.addEventListener('change', function(e) {
+            // Remove any existing event listeners to prevent duplicates
+            input.removeEventListener('change', handleBannerChange);
+            input.addEventListener('change', handleBannerChange);
+            
+            function handleBannerChange(e) {
                 const file = e.target.files[0];
                 if (file) {
+                    // Validate file type
+                    if (!file.type.startsWith('image/')) {
+                        alert('Por favor selecciona un archivo de imagen válido.');
+                        return;
+                    }
+                    
+                    // Validate file size (max 5MB)
+                    if (file.size > 5 * 1024 * 1024) {
+                        alert('El archivo es demasiado grande. Por favor selecciona una imagen menor a 5MB.');
+                        return;
+                    }
+                    
                     const reader = new FileReader();
                     reader.onload = function(e) {
-                        const banner = document.querySelector('.banner');
-                        banner.style.backgroundImage = `url(${e.target.result})`;
+                        const imageUrl = e.target.result;
+                        banner.style.backgroundImage = `url(${imageUrl})`;
+                        
+                        // Save to localStorage for persistence
+                        try {
+                            localStorage.setItem('bannerImage', imageUrl);
+                        } catch (error) {
+                            console.warn('No se pudo guardar la imagen en localStorage:', error);
+                        }
                     };
+                    
+                    reader.onerror = function() {
+                        alert('Error al cargar la imagen. Por favor intenta de nuevo.');
+                    };
+                    
                     reader.readAsDataURL(file);
                 }
-            });
+                
+                // Clear the input value to allow selecting the same file again
+                input.value = '';
+            }
+        }
+        
+        // Función para cargar imagen guardada del banner
+        function loadSavedBannerImage() {
+            try {
+                const savedImage = localStorage.getItem('bannerImage');
+                if (savedImage) {
+                    const banner = document.querySelector('.banner');
+                    banner.style.backgroundImage = `url(${savedImage})`;
+                }
+            } catch (error) {
+                console.warn('No se pudo cargar la imagen guardada:', error);
+            }
+        }
+        
+        // Función para restablecer la imagen del banner a la predeterminada
+        function resetBannerImage() {
+            const banner = document.querySelector('.banner');
+            const defaultImage = "url('https://images.unsplash.com/photo-1559827260-dc66d52bef19?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80')";
+            
+            banner.style.backgroundImage = defaultImage;
+            
+            // Remove saved image from localStorage
+            try {
+                localStorage.removeItem('bannerImage');
+            } catch (error) {
+                console.warn('No se pudo eliminar la imagen guardada:', error);
+            }
         }
 
         // Inicializar la página
         document.addEventListener('DOMContentLoaded', function() {
             populateTeacherFilter();
             renderSchedule();
+            loadSavedBannerImage();
             changeBannerImage();
         });
     </script>
