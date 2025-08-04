@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pilares Mártires del 10 de junio - Actividades de Verano 2025</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #ffd89b 0%, #19547b 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        .banner {
+            position: relative;
+            height: 350px;
+            background-image: url('https://images.unsplash.com/photo-1544551763-46a013bb70d5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            overflow: hidden;
+        }
+
+        .banner-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(255, 140, 0, 0.9), rgba(255, 69, 0, 0.8));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+
+        .banner-upload {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: rgba(255, 255, 255, 0.9);
+            border: none;
+            padding: 8px 15px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 12px;
+            font-weight: 600;
+            color: #ff4500;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .banner-upload:hover {
+            background: white;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .header {
+            color: white;
+            padding: 40px 30px;
+            text-align: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .header h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .header p {
+            font-size: 1.3rem;
+            opacity: 0.95;
+            margin-bottom: 10px;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+        }
+
+        .date-banner {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-top: 15px;
+            display: inline-block;
+            backdrop-filter: blur(5px);
+        }
+
+        .summer-features {
+            padding: 30px;
+            background: linear-gradient(135deg, #fff3cd, #ffeaa7);
+            text-align: center;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .feature-card {
+            background: white;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .feature-icon {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        .feature-title {
+            font-weight: 700;
+            color: #ff6b35;
+            margin-bottom: 5px;
+        }
+
+        .controls {
+            padding: 30px;
+            background: rgba(248, 250, 252, 0.8);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .filter-group {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .filter-group label {
+            font-weight: 600;
+            color: #374151;
+        }
+
+        select, input {
+            padding: 10px 15px;
+            border: 2px solid #e5e7eb;
+            border-radius: 10px;
+            font-size: 14px;
+            transition: all 0.3s ease;
+            background: white;
+        }
+
+        select:focus, input:focus {
+            outline: none;
+            border-color: #ff6b35;
+            box-shadow: 0 0 0 3px rgba(255, 107, 53, 0.1);
+        }
+
+        .add-activity-btn {
+            background: linear-gradient(135deg, #ff6b35, #ff4500);
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 10px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(255, 107, 53, 0.3);
+        }
+
+        .add-activity-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(255, 107, 53, 0.4);
+        }
+
+        .schedule-grid {
+            padding: 30px;
+            display: grid;
+            gap: 25px;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        }
+
+        .day-column {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .day-column:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 35px rgba(0, 0, 0, 0.12);
+        }
+
+        .day-header {
+            background: linear-gradient(135deg, #ff6b35, #ff4500);
+            color: white;
+            padding: 20px;
+            text-align: center;
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+
+        .activity-slot {
+            padding: 15px 20px;
+            border-bottom: 1px solid #f1f5f9;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .activity-slot:last-child {
+            border-bottom: none;
+        }
+
+        .activity-slot:hover {
+            background: linear-gradient(135deg, #fff7ed, #fed7aa);
+            transform: translateX(5px);
+        }
+
+        .activity-time {
+            font-weight: 700;
+            color: #ff6b35;
+            font-size: 0.9rem;
+            margin-bottom: 5px;
+        }
+
+        .activity-name {
+            font-weight: 600;
+            color: #1f2937;
+            font-size: 1rem;
+            margin-bottom: 3px;
+        }
+
+        .activity-teacher {
+            color: #6b7280;
+            font-size: 0.85rem;
+            font-style: italic;
+        }
+
+        .no-activities {
+            padding: 40px 20px;
+            text-align: center;
+            color: #9ca3af;
+            font-style: italic;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            backdrop-filter: blur(5px);
+            z-index: 1000;
+            animation: fadeIn 0.3s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .modal-content {
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
+            width: 90%;
+            max-width: 500px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
+            animation: slideIn 0.3s ease;
+        }
+
+        @keyframes slideIn {
+            from { transform: translate(-50%, -60%); opacity: 0; }
+            to { transform: translate(-50%, -50%); opacity: 1; }
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #374151;
+        }
+
+        .form-group input, .form-group select {
+            width: 100%;
+        }
+
+        .form-buttons {
+            display: flex;
+            gap: 15px;
+            justify-content: flex-end;
+            margin-top: 30px;
+        }
+
+        .btn {
+            padding: 12px 20px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #ff6b35, #ff4500);
+            color: white;
+        }
+
+        .btn-secondary {
+            background: #f3f4f6;
+            color: #374151;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+        }
+
+        .back-link {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background: rgba(255, 255, 255, 0.9);
+            color: #ff6b35;
+            padding: 10px 20px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            z-index: 10;
+        }
+
+        .back-link:hover {
+            background: white;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2.2rem;
+                flex-direction: column;
+                gap: 10px;
+            }
+            
+            .controls {
+                flex-direction: column;
+                align-items: stretch;
+            }
+            
+            .filter-group {
+                justify-content: space-between;
+            }
+            
+            .schedule-grid {
+                grid-template-columns: 1fr;
+                padding: 15px;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="banner">
+            <a href="./index.html" class="back-link">← Horarios Regulares</a>
+            <input type="file" id="bannerUpload" accept="image/*" style="display: none;">
+            <button class="banner-upload" onclick="document.getElementById('bannerUpload').click()">📷 Cambiar Imagen</button>
+            <div class="banner-overlay">
+                <div class="header">
+                    <h1>🌞 Actividades de Verano 2025</h1>
+                    <p>Pilares Mártires del 10 de junio</p>
+                    <div class="date-banner">📅 28 de Julio - 16 de Agosto</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="summer-features">
+            <h2 style="color: #ff6b35; margin-bottom: 10px;">¡Un Verano Lleno de Diversión y Aprendizaje!</h2>
+            <p style="color: #666; margin-bottom: 20px;">Actividades especiales diseñadas para todas las infancias durante las vacaciones de verano</p>
+            
+            <div class="features-grid">
+            
+                <div class="feature-card">
+                    <div class="feature-icon">🎨</div>
+                    <div class="feature-title">Arte y Creatividad</div>
+                    <p>Talleres de dibujo y manualidades</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📝</div>
+                    <div class="feature-title">Acádemicas</div>
+                    <p>Regularización, Computación y más</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🎭</div>
+                    <div class="feature-title">Teatro y Música</div>
+                    <p>Expresión artística y cultural</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="controls">
+            <div class="filter-group">
+                <label for="teacherFilter">Profesor:</label>
+                <select id="teacherFilter">
+                    <option value="">Todos los profesores</option>
+                </select>
+            </div>
+            <div class="filter-group">
+                <label for="activityFilter">Taller:</label>
+                <input type="text" id="activityFilter" placeholder="Buscar taller...">
+            </div>
+            <button class="add-activity-btn" onclick="openModal()">+ Agregar Actividad</button>
+        </div>
+
+        <div class="schedule-grid" id="scheduleGrid">
+            <!-- Los días se generarán dinámicamente -->
+        </div>
+    </div>
+
+    <!-- Modal para agregar actividades -->
+    <div class="modal" id="modal">
+        <div class="modal-content">
+            <h2 style="margin-bottom: 20px; color: #1f2937;">Agregar Nueva Actividad de Verano</h2>
+            <form id="activityForm">
+                <div class="form-group">
+                    <label for="day">Día de la semana:</label>
+                    <select id="day" required>
+                        <option value="Lunes">Lunes</option>
+                        <option value="Martes">Martes</option>
+                        <option value="Miércoles">Miércoles</option>
+                        <option value="Jueves">Jueves</option>
+                        <option value="Viernes">Viernes</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="time">Horario:</label>
+                    <input type="text" id="time" placeholder="ej: 09:00 - 11:00" required>
+                </div>
+                <div class="form-group">
+                    <label for="activity">Nombre del Taller:</label>
+                    <input type="text" id="activity" placeholder="ej: Natación para Niños" required>
+                </div>
+                <div class="form-group">
+                    <label for="teacher">Profesor:</label>
+                    <input type="text" id="teacher" placeholder="ej: Carlos Aquino" required>
+                </div>
+                <div class="form-buttons">
+                    <button type="button" class="btn btn-secondary" onclick="closeModal()">Cancelar</button>
+                    <button type="submit" class="btn btn-primary">Agregar Actividad</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // Datos de actividades de verano (28 julio - 16 agosto)
+        let summerActivities = {
+            'Lunes': [
+                { time: '08:00 - 09:30', name: 'Natación Infantil', teacher: 'Carlos Aquino' },
+                { time: '10:00 - 11:30', name: 'Arte y Manualidades', teacher: 'Sofía Méndez' },
+                { time: '14:00 - 15:30', name: 'Deportes Recreativos', teacher: 'Miguel Torres' },
+                { time: '16:00 - 17:30', name: 'Cocina para Niños', teacher: 'Ana Patricia' }
+            ],
+            'Martes': [
+                { time: '09:00 - 10:30', name: 'Teatro Infantil', teacher: 'Roberto Drama' },
+                { time: '11:00 - 12:30', name: 'Ciencias Divertidas', teacher: 'Dr. Luis Campos' },
+                { time: '15:00 - 16:30', name: 'Danza Moderna', teacher: 'Carla Movimiento' },
+                { time: '17:00 - 18:30', name: 'Computación Básica', teacher: 'Javier Tech' }
+            ],
+            'Miércoles': [
+                { time: '08:30 - 10:00', name: 'Yoga para Niños', teacher: 'Marina Zen' },
+                { time: '10:30 - 12:00', name: 'Huerto Urbano Infantil', teacher: 'Alberto Verde' },
+                { time: '14:30 - 16:00', name: 'Música y Canto', teacher: 'Carmen Melody' },
+                { time: '16:30 - 18:00', name: 'Juegos Tradicionales', teacher: 'Pedro Nostalgia' }
+            ],
+            'Jueves': [
+                { time: '09:00 - 10:30', name: 'Pintura Creativa', teacher: 'Isabella Color' },
+                { time: '11:00 - 12:30', name: 'Fútbol Recreativo', teacher: 'Fernando Gol' },
+                { time: '15:00 - 16:30', name: 'Lectura de Cuentos', teacher: 'María Historia' },
+                { time: '17:00 - 18:30', name: 'Origami y Papiroflexia', teacher: 'Hiroshi Papel' }
+            ],
+            'Viernes': [
+                { time: '08:00 - 09:30', name: 'Actividades Acuáticas', teacher: 'Roberto Splash' },
+                { time: '10:00 - 12:00', name: 'Taller de Inventos', teacher: 'Tomás Crear' },
+                { time: '14:00 - 16:00', name: 'Festival de Talentos', teacher: 'Valentina Show' },
+                { time: '16:30 - 18:00', name: 'Cine y Palomitas', teacher: 'Diego Film' }
+            ]
+        };
+
+        const summerDays = ['Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes'];
+
+        function getAllTeachers() {
+            const teachers = new Set();
+            Object.values(summerActivities).forEach(dayActivities => {
+                dayActivities.forEach(activity => {
+                    teachers.add(activity.teacher);
+                });
+            });
+            return Array.from(teachers).sort();
+        }
+
+        function populateTeacherFilter() {
+            const select = document.getElementById('teacherFilter');
+            const teachers = getAllTeachers();
+            
+            select.innerHTML = '<option value="">Todos los profesores</option>';
+            teachers.forEach(teacher => {
+                const option = document.createElement('option');
+                option.value = teacher;
+                option.textContent = teacher;
+                select.appendChild(option);
+            });
+        }
+
+        function renderSchedule() {
+            const grid = document.getElementById('scheduleGrid');
+            const teacherFilter = document.getElementById('teacherFilter').value;
+            const activityFilter = document.getElementById('activityFilter').value.toLowerCase();
+            
+            grid.innerHTML = '';
+
+            summerDays.forEach(day => {
+                const dayColumn = document.createElement('div');
+                dayColumn.className = 'day-column';
+
+                const dayHeader = document.createElement('div');
+                dayHeader.className = 'day-header';
+                dayHeader.textContent = day;
+
+                dayColumn.appendChild(dayHeader);
+
+                let dayActivities = summerActivities[day] || [];
+
+                // Aplicar filtros
+                if (teacherFilter) {
+                    dayActivities = dayActivities.filter(activity => activity.teacher === teacherFilter);
+                }
+                if (activityFilter) {
+                    dayActivities = dayActivities.filter(activity => 
+                        activity.name.toLowerCase().includes(activityFilter)
+                    );
+                }
+
+                if (dayActivities.length === 0) {
+                    const noActivities = document.createElement('div');
+                    noActivities.className = 'no-activities';
+                    noActivities.textContent = 'No hay actividades programadas';
+                    dayColumn.appendChild(noActivities);
+                } else {
+                    dayActivities.forEach(activity => {
+                        const activitySlot = document.createElement('div');
+                        activitySlot.className = 'activity-slot';
+
+                        activitySlot.innerHTML = `
+                            <div class="activity-time">${activity.time}</div>
+                            <div class="activity-name">${activity.name}</div>
+                            <div class="activity-teacher">Prof. ${activity.teacher}</div>
+                        `;
+
+                        dayColumn.appendChild(activitySlot);
+                    });
+                }
+
+                grid.appendChild(dayColumn);
+            });
+        }
+
+        function openModal() {
+            document.getElementById('modal').style.display = 'block';
+        }
+
+        function closeModal() {
+            document.getElementById('modal').style.display = 'none';
+            document.getElementById('activityForm').reset();
+        }
+
+        function addActivity(day, time, name, teacher) {
+            if (!summerActivities[day]) {
+                summerActivities[day] = [];
+            }
+            summerActivities[day].push({ time, name, teacher });
+            
+            // Ordenar por tiempo
+            summerActivities[day].sort((a, b) => a.time.localeCompare(b.time));
+        }
+
+        // Función para cambiar la imagen del banner
+        function changeBannerImage() {
+            const input = document.getElementById('bannerUpload');
+            
+            input.addEventListener('change', function(e) {
+                const file = e.target.files[0];
+                if (file) {
+                    const reader = new FileReader();
+                    reader.onload = function(e) {
+                        const banner = document.querySelector('.banner');
+                        banner.style.backgroundImage = `url(${e.target.result})`;
+                    };
+                    reader.readAsDataURL(file);
+                }
+            });
+        }
+
+        // Event listeners
+        document.getElementById('teacherFilter').addEventListener('change', renderSchedule);
+        document.getElementById('activityFilter').addEventListener('input', renderSchedule);
+
+        document.getElementById('activityForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const day = document.getElementById('day').value;
+            const time = document.getElementById('time').value;
+            const name = document.getElementById('activity').value;
+            const teacher = document.getElementById('teacher').value;
+
+            addActivity(day, time, name, teacher);
+            populateTeacherFilter();
+            renderSchedule();
+            closeModal();
+        });
+
+        // Cerrar modal al hacer clic fuera de él
+        document.getElementById('modal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeModal();
+            }
+        });
+
+        // Inicializar la página
+        document.addEventListener('DOMContentLoaded', function() {
+            populateTeacherFilter();
+            renderSchedule();
+            changeBannerImage();
+        });
+    </script>
+</body>
+</html>
