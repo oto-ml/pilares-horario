@@ -487,10 +487,7 @@
                     <label for="teacher">Profesor:</label>
                     <input type="text" id="teacher" placeholder="ej: Carlos Aquino" required>
                 </div>
-                <div class="form-buttons">
-                    <button type="button" class="btn btn-secondary" onclick="closeModal()">Cancelar</button>
-                    <button type="submit" class="btn btn-primary">Agregar Actividad</button>
-                </div>
+                
             </form>
         </div>
     </div>
@@ -499,34 +496,35 @@
         // Datos de actividades de verano (28 julio - 16 agosto)
         let summerActivities = {
             'Lunes': [
-                { time: '08:00 - 09:30', name: 'Natación Infantil', teacher: 'Carlos Aquino' },
-                { time: '10:00 - 11:30', name: 'Arte y Manualidades', teacher: 'Sofía Méndez' },
-                { time: '14:00 - 15:30', name: 'Deportes Recreativos', teacher: 'Miguel Torres' },
-                { time: '16:00 - 17:30', name: 'Cocina para Niños', teacher: 'Ana Patricia' }
+                { time: '15:00 - 16:00', name: 'Regularización Español y Matemáticas', teacher: 'Miriam Olvera' },
+                { time: '16:00 - 17:00', name: 'Pedagogía para Preescolares', teacher: 'Miriam Olvera' },
+                { time: '16:00 - 17:30', name: 'Computación Infantil', teacher: 'Lalo' },
+                { time: '17:00 - 18:00', name: 'Dibujo para peques', teacher: 'Adriana Dominguez' }
             ],
             'Martes': [
-                { time: '09:00 - 10:30', name: 'Teatro Infantil', teacher: 'Roberto Drama' },
-                { time: '11:00 - 12:30', name: 'Ciencias Divertidas', teacher: 'Dr. Luis Campos' },
-                { time: '15:00 - 16:30', name: 'Danza Moderna', teacher: 'Carla Movimiento' },
-                { time: '17:00 - 18:30', name: 'Computación Básica', teacher: 'Javier Tech' }
+                { time: '15:00 - 16:00', name: 'Lengua de Señas Mexicana para niños', teacher: 'Itzel' },
+                { time: '11:00 - 12:30', name: 'Regularización en Ciencias para secundaria (Biología y Química)', teacher: 'Lalo' }
+        
             ],
             'Miércoles': [
-                { time: '08:30 - 10:00', name: 'Yoga para Niños', teacher: 'Marina Zen' },
-                { time: '10:30 - 12:00', name: 'Huerto Urbano Infantil', teacher: 'Alberto Verde' },
-                { time: '14:30 - 16:00', name: 'Música y Canto', teacher: 'Carmen Melody' },
-                { time: '16:30 - 18:00', name: 'Juegos Tradicionales', teacher: 'Pedro Nostalgia' }
+                { time: '15:00 - 16:00', name: 'Regularización Español y Matemáticas', teacher: 'Miriam Olvera' },
+                { time: '16:00 - 17:00', name: 'Pedagogía para Preescolares', teacher: 'Miriam Olvera' },
+                { time: '16:00 - 17:30', name: 'Regularización en Ciencias para secundaria (Biología y Química) ', teacher: 'Lalo' }
             ],
             'Jueves': [
-                { time: '09:00 - 10:30', name: 'Pintura Creativa', teacher: 'Isabella Color' },
-                { time: '11:00 - 12:30', name: 'Fútbol Recreativo', teacher: 'Fernando Gol' },
-                { time: '15:00 - 16:30', name: 'Lectura de Cuentos', teacher: 'María Historia' },
-                { time: '17:00 - 18:30', name: 'Origami y Papiroflexia', teacher: 'Hiroshi Papel' }
+                { time: '15:00 - 16:00', name: 'Matemáticas Primaria (1ro a 3er año)', teacher: 'Isabel Miranda' },
+                { time: '16:00 - 17:00', name: 'Matemáticas Primaria (4to a 6to año)', teacher: 'Isabel Miranda' },
+                { time: '16:00 - 17:00', name: 'Titeres y Máscaras', teacher: 'x' },
+                { time: '17:00 - 18:30', name: 'Computación Infantil', teacher: 'Lalo' },
+                { time: '17:00 - 18:00', name: 'Dibujo para peques', teacher: 'Adriana Dominguez' },
+                { time: '18:00 - 19:00', name: 'Juegos de mesa', teacher: 'x' }
             ],
             'Viernes': [
-                { time: '08:00 - 09:30', name: 'Actividades Acuáticas', teacher: 'Roberto Splash' },
-                { time: '10:00 - 12:00', name: 'Taller de Inventos', teacher: 'Tomás Crear' },
-                { time: '14:00 - 16:00', name: 'Festival de Talentos', teacher: 'Valentina Show' },
-                { time: '16:30 - 18:00', name: 'Cine y Palomitas', teacher: 'Diego Film' }
+                { time: '15:00 - 16:00', name: 'Matemáticas Primaria (1ro a 3er año)', teacher: 'Isabel Miranda' },
+                { time: '15:00 - 16:00', name: 'Braille', teacher: 'Itzel' },
+                { time: '16:00 - 17:00', name: 'Matemáticas Primaria (4to a 6to año)', teacher: 'Isabel Miranda' },
+                { time: '16:00 - 17:00', name: 'Expresión y Movimiento', teacher: 'x' },
+                { time: '18:00 - 19:00', name: 'Juegos de Mesa', teacher: 'Diego Film' }
             ]
         };
 
