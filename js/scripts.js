@@ -16,7 +16,9 @@
                 { time: '11:00 - 13:00', name: 'Teatro', teacher: 'Carlos ' },
                 { time: '11:00 - 15:00', name: 'Joyería', teacher: 'Aracelí Sanchez' },
                 { time: '13:00 - 15:00', name: 'Asesorías Ciencias Sociales', teacher: 'Isabel' },
+                { time: '14:00 - 15:30', name: 'Ritmos Latinos', teacher: 'Eduardo' },
                 { time: '15:00 - 16:00', name: 'Asesorías a Plataformas Educativas (Prepas)', teacher: 'Miriam Olvera' },
+                { time: '15:30 - 16:30', name: 'Danzón', teacher: 'Eduardo' },
                 { time: '15:00 - 20:00', name: 'Matemáticas', teacher: 'Kasandra' },
                 { time: '16:00 - 17:00', name: 'Preescolares', teacher: 'Miriam Olvera' },
                 { time: '16:00 - 17:30', name: 'Computación para niños', teacher: 'Lalo' },
@@ -39,7 +41,6 @@
                 { time: '10:00 - 14:00', name: 'Bordado Tenango', teacher: 'Claudia Loyola' },
                 { time: '11:00 - 13:00', name: 'Uso y Manejo de Internet', teacher: 'Miriam Olvera' },
                 { time: '11:00 - 13:00', name: 'Uso de Celular', teacher: 'Isabel' },
-                { time: '12:00 - 14:00', name: 'Danzón', teacher: 'Eduardo' },
                 { time: '13:00 - 15:00', name: 'Asesorías INEA', teacher: 'Miriam Olvera' },
                 { time: '13:00 - 15:00', name: 'Asesorías Ciencias Sociales', teacher: 'Isabel' },
                 { time: '13:00 - 18:00', name: 'Joyería', teacher: 'Aracelí Sanchez' },
@@ -63,6 +64,7 @@
                 { time: '11:00 - 16:00', name: 'Matemáticas', teacher: 'Kasandra' },
                 { time: '12:00 - 14:00', name: 'Teatro', teacher: 'Carlos ' },
                 { time: '13:00 - 15:00', name: 'Asesorías Ciencias Sociales', teacher: 'Isabel' },
+                { time: '14:00 - 16:00', name: 'Danzón', teacher: 'Eduardo' },
                 { time: '15:00 - 16:00', name: 'Asesorías a Plataformas Educativas (Prepas)', teacher: 'Miriam Olvera' },
                 { time: '15:00 - 18:00', name: 'Bordado Tenango', teacher: 'Claudia Loyola' },
                 { time: '16:00 - 17:00', name: 'Preescolares', teacher: 'Miriam Olvera' },
@@ -87,13 +89,10 @@
                 { time: '16:00 - 18:00', name: 'Computación Básica', teacher: 'Otto' },
                 { time: '16:00 - 18:30', name: 'Teatro', teacher: 'Carlos ' },
                 { time: '17:00 - 19:00', name: 'Exámen Único Ciencias Sociales', teacher: 'Isabel' },
-                { time: '17:30 - 18:30', name: 'Salsa', teacher: 'Eduardo' },
                 { time: '17:30 - 20:00', name: 'Arte Urbano', teacher: 'Adriana Dominguez' },
                 { time: '17:00 - 20:00', name: 'Ajedrez', teacher: 'Enrique Santos' },
                 { time: '18:00 - 20:00', name: 'INEA', teacher: 'Lalo' },
-                { time: '18:00 - 20:00', name: 'Escuela de Código', teacher: 'Otto' },
-                { time: '18:30 - 20:00', name: 'Danzón', teacher: 'Eduardo' }
-            
+                { time: '18:00 - 20:00', name: 'Escuela de Código', teacher: 'Otto' }     
             ],
             'Viernes': [
                 { time: '08:30 - 10:00', name: 'Zumba', teacher: 'Miriam' },
