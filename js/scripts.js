@@ -64,7 +64,7 @@
                 { time: '11:00 - 16:00', name: 'Matemáticas', teacher: 'Kasandra' },
                 { time: '12:00 - 14:00', name: 'Teatro', teacher: 'Carlos ' },
                 { time: '13:00 - 15:00', name: 'Asesorías Ciencias Sociales', teacher: 'Isabel' },
-                { time: '14:00 - 16:00', name: 'Danzón', teacher: 'Eduardo' },
+                { time: '14:00 - 16:30', name: 'Danzón', teacher: 'Eduardo' },
                 { time: '15:00 - 16:00', name: 'Asesorías a Plataformas Educativas (Prepas)', teacher: 'Miriam Olvera' },
                 { time: '15:00 - 18:00', name: 'Bordado Tenango', teacher: 'Claudia Loyola' },
                 { time: '16:00 - 17:00', name: 'Preescolares', teacher: 'Miriam Olvera' },
