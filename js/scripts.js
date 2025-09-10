@@ -22,7 +22,6 @@
                 { time: '15:00 - 20:00', name: 'Matemáticas', teacher: 'Kasandra' },
                 { time: '16:00 - 17:00', name: 'Preescolares', teacher: 'Miriam Olvera' },
                 { time: '16:00 - 17:30', name: 'Computación para niños', teacher: 'Lalo' },
-                { time: '16:00 - 18:00', name: 'Hojas de Cálculo', teacher: 'Otto' },
                 { time: '16:00 - 18:00', name: 'Box y Defensa Personal', teacher: 'Javier Solis' },
                 { time: '16:00 - 18:00', name: 'Guitarra Básica', teacher: 'Eduardo Victoria' },
                 { time: '17:00 - 18:00', name: 'Uso de Celular', teacher: 'Miriam Olvera' },
@@ -30,7 +29,6 @@
                 { time: '17:30 - 20:00', name: 'Arte Urbano', teacher: 'Adriana Dominguez' },
                 { time: '18:00 - 19:00', name: 'Computación', teacher: 'Miriam Olvera' },
                 { time: '18:00 - 20:00', name: 'Guitarra Intermedia', teacher: 'Eduardo Victoria' },
-                { time: '18:00 - 20:00', name: 'Escuela de Código', teacher: 'Otto' },
                 { time: '18:00 - 20:00', name: 'INEA', teacher: 'Lalo' },
                 { time: '19:00 - 20:00', name: 'Asesorías Español y Civismo (Primaria y Secu)', teacher: 'Miriam Olvera' },
             ],
@@ -46,13 +44,11 @@
                 { time: '13:00 - 18:00', name: 'Joyería', teacher: 'Aracelí Sanchez' },
                 { time: '15:00 - 16:00', name: 'Lengua de Señas Mexicana para niños', teacher: 'Itzel' },
                 { time: '15:00 - 20:00', name: 'Matemáticas', teacher: 'Kasandra' },
-                { time: '16:00 - 18:00', name: 'Hojas de Cálculo', teacher: 'Otto' },
                 { time: '16:00 - 18:00', name: 'Regularización Secundaria (Biología, Química)', teacher: 'Lalo' },               
                 { time: '16:00 - 17:00', name: 'Lengua de Señas Mexicana para usuarios sordos', teacher: 'Itzel' },
                 { time: '16:00 - 18:30', name: 'Teatro', teacher: 'Carlos ' },
                 { time: '16:00 - 20:00', name: 'Ajedrez', teacher: 'Enrique Santos' },
                 { time: '17:00 - 19:00', name: 'Lengua de Señas Mexicana Modulo 2', teacher: 'Itzel' },
-                { time: '18:00 - 20:00', name: 'Escuela de Código', teacher: 'Otto' },
                 { time: '18:00 - 20:00', name: 'Exámen Único (Biología, Química)', teacher: 'Lalo' }        
             ],
             'Miércoles': [
@@ -68,12 +64,10 @@
                 { time: '15:00 - 16:00', name: 'Asesorías a Plataformas Educativas (Prepas)', teacher: 'Miriam Olvera' },
                 { time: '15:00 - 18:00', name: 'Bordado Tenango', teacher: 'Claudia Loyola' },
                 { time: '16:00 - 17:00', name: 'Preescolares', teacher: 'Miriam Olvera' },
-                { time: '16:00 - 18:00', name: 'Computación Básica', teacher: 'Otto' },
                 { time: '16:00 - 18:00', name: 'Regularización Secundaria (Biología, Química)', teacher: 'Lalo' },         
                 { time: '16:00 - 18:00', name: 'Box y Defensa Personal', teacher: 'Javier Solis' },
                 { time: '17:00 - 19:00', name: 'Computación', teacher: 'Miriam Olvera' },
                 { time: '18:00 - 20:00', name: 'INEA', teacher: 'Lalo' },
-                { time: '18:00 - 20:00', name: 'Escuela de Código', teacher: 'Otto' },
                 { time: '18:30 - 20:00', name: 'Patinaje', teacher: 'Angel' },
                 { time: '19:00 - 20:00', name: 'Asesorías Español y Civismo (Primaria y Secu)', teacher: 'Miriam Olvera' }
             ],
@@ -86,13 +80,12 @@
                 { time: '13:00 - 15:00', name: 'Asesorías INEA', teacher: 'Miriam Olvera' },
                 { time: '15:00 - 17:00', name: 'Asesorías Matemáticas niños de 9 a 11 años', teacher: 'Isabel' },
                 { time: '16:00 - 18:00', name: 'Computación para niños', teacher: 'Lalo' },
-                { time: '16:00 - 18:00', name: 'Computación Básica', teacher: 'Otto' },
                 { time: '16:00 - 18:30', name: 'Teatro', teacher: 'Carlos ' },
                 { time: '17:00 - 19:00', name: 'Exámen Único Ciencias Sociales', teacher: 'Isabel' },
                 { time: '17:30 - 20:00', name: 'Arte Urbano', teacher: 'Adriana Dominguez' },
                 { time: '17:00 - 20:00', name: 'Ajedrez', teacher: 'Enrique Santos' },
-                { time: '18:00 - 20:00', name: 'INEA', teacher: 'Lalo' },
-                { time: '18:00 - 20:00', name: 'Escuela de Código', teacher: 'Otto' }     
+                { time: '18:00 - 20:00', name: 'INEA', teacher: 'Lalo' }
+                   
             ],
             'Viernes': [
                 { time: '08:30 - 10:00', name: 'Zumba', teacher: 'Miriam' },
@@ -118,7 +111,6 @@
                 { time: '10:30 - 12:00', name: 'Exámen Único Ciencias Sociales', teacher: 'Isabel' },
                 { time: '10:00 - 13:00', name: 'Bordado Tenango', teacher: 'Claudia Loyola' },
                 { time: '10:00 - 12:00', name: 'Guitarra Intermedia', teacher: 'Eduardo Victoria' },
-                { time: '10:00 - 14:00', name: 'Escuela de Código', teacher: 'Otto' },
                 { time: '11:00 - 12:00', name: 'Uso de Celular', teacher: 'Miriam Olvera' },
                 { time: '12:00 - 13:00', name: 'Club de Tareas Primaria', teacher: 'Miriam Olvera' },
                 { time: '12:00 - 14:00', name: 'Exámen Único (Biología, Química)', teacher: 'Lalo' },
